@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/mainpage.css">
+    <link rel="stylesheet" href="../static/common.css">
+    <title>Main Page</title>
+</head>
+
+<body>
+    <div class="flex-header">
+        <div class="flex-item-logo">
+            <a href="./mainpage"><img src="../static/logo.png" width="175px" height="90px"></a>
+        </div>
+        <div class="flex-logincontent">
+            <button class="Button" onclick="location.href='./';">Logout</button>
+        </div>
+    </div>
+    <div class="canvas">
+        <h3 class="tableTitle">Product Summary</h3>
+        <div class="form">
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Houseware</th>
+                    <th>Cleaning Material</th>
+                    <th>Food/Drink</th>
+                    <th>Other</th>
+                </tr>
+                {% set hw, cl, fd, ot  = dash0 %}
+                <tr>
+                        <td>Number of Types</td>
+                        <td>{{ hw }}</td>
+                        <td>{{ cl }}</td>
+                        <td>{{ fd }}</td>
+                        <td>{{ ot }}</td>
+                </tr>
+                {% set hw, cl, fd, ot  = dash1 %}
+                    <tr>
+                        <td>Quantity</td>
+                        <td>{{ hw }}</td>
+                        <td>{{ cl }}</td>
+                        <td>{{ fd }}</td>
+                        <td>{{ ot }}</td>
+                    </tr>
+            </table>
+        </div>
+    </div>
+    <div class="buttonCanvas">
+        <button class="Button" onclick="location.href = './FoodDrink';">Food/Drink</button>
+        <button class="Button" onclick="location.href = './CleaningMaterial';">Cleaning Material</button>
+        <button class="Button" onclick="location.href = './Housware';">Housware</button>
+        <button class="Button" onclick="location.href = './Other';">Other</button>
+        <button class="Button" onclick="location.href = './InLog';">InLog</button>
+        <button class="Button" onclick="location.href = './OutLog';">OutLog</button>
+    </div>
+
+    <div class="formCanvas">
+        <form class="form-col" action="{{ url_for('addItem') }}" method="post">
+            <h2>Record Coming Items</h2>
+                <label class="formLabel">Name</label>
+                <input class="inp" type="text" name="Name" required>
+
+                <label class="formLabel">Quantity</label>
+                <input class="inp" type="number" value="Quantity" name="Quantity" required>
+
+                <label class="formLabel">Cost</label>
+                <input class="inp" type="number" value="Price" name="Price" required>
+
+                <label class="formLabel">End of Usage Date:</label>
+                <input class="inp" type="date" name="EUD">
+
+                <label class="formLabel">Type of Item</label>
+                <select class="inp" name="Type" required>
+                    <option>Food/Drink</option>
+                    <option>Cleaning</option>
+                    <option>Houseware</option>
+                    <option>Other</option>
+                </select>
+                <input type="submit" style="margin-top: 10px;" class="Button" value="Create Record">
+
+        </form>
+        <form class="form-col" action="{{ url_for('outItem') }}" method="post">
+            <h2>Record Outgoing Items</h2>
+            <label class="formLabel">ID</label>
+            <input class="inp" type="number" name="ID" required>
+
+            <label class="formLabel">Quantity</label>
+            <input class="inp" type="number" name="Quantity" required>
+            <label class="formLabel">Type of Item</label>
+                <select class="inp" name="Type" required>
+                    <option>Food/Drink</option>
+                    <option>Cleaning</option>
+                    <option>Houseware</option>
+                    <option>Other</option>
+                </select>
+            <label style="padding: 5px; color: red;">{{ err }}</label>
+            <input type="submit" style="margin-top: 10px;" class="Button" value="Create Record">
+        </form>
+    </div>
+
+</body>
+
+</html>

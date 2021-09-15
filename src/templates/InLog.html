@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Log</title>
+    <link rel="stylesheet" href="../static/common.css">
+</head>
+
+<body>
+    <div class="flex-header">
+        <div class="flex-item-logo">
+            <a href="./mainpage"><img src="../static/logo.png" width="175px" height="90px"></a>
+        </div>
+        <div class="flex-logincontent">
+            <button class="Button" onclick="location.href='./';">Logout</button>
+        </div>
+    </div>
+    <div class="canvas">
+        <h3 class="tableTitle">Input Logs</h3>
+        <div class="form">
+            <table>
+                <tr>
+                    <th>Input ID</th>
+                    <th>Item ID</th>
+                    <th>Name</th>
+                    <th>In Quantity</th>
+                    <th> In Date</th>
+                    <th>Cost</th>
+                    <th>End of Usage</th>
+                </tr>
+                {% for ID, name, quan, inDate, EUD, logID, price in all_rows %}
+                    <tr>
+                        <td>{{ logID }}</td>
+                        <td>{{ ID }}</td>
+                        <td>{{ name }}</td>
+                        <td>{{ quan }}</td>
+                        <td>{{ inDate }}</td>
+                        <td>{{ price }}</td>
+                        <td>{{ EUD }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+    <div class="backButtonDiv">
+        <button class="Button" onclick="location.href='./mainpage';">Go Back</button>
+        <button class="Button" onclick="location.href= './InLogSortByName'">Sort by Name</button>
+    </div>
+</body>
+
+</html>

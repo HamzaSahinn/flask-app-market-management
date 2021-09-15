@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=,, initial-scale=1.0">
+    <title id="page-title">Login</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login_page.css') }}">
+</head>
+
+<body>
+    <form class="form" action="{{ url_for('loginUser') }}" method="post">
+        <div class="login-form" id="login">
+            <img src="../static/logo.png" width=200px style="margin-left: auto; margin-right: auto;">
+            <input class="text-bar" type="text" placeholder="Username" name="Username" required>
+            <input class="text-bar" type="password" placeholder="Password" name="Password" required>
+            <label style="color: red; padding: 5px;">{{ err }}</label>
+            <button class="Button">Login</button>
+        </div>
+    </form>
+</body>
+
+
+</html>

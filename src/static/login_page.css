@@ -1,0 +1,42 @@
+body {
+  background: linear-gradient(#224a77, #224a77);
+}
+.form {
+  width: 350px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f6f4f3;
+  border-radius: 5%;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.text-bar {
+  margin-top: 10px;
+  height: 30px;
+  border-radius: 8px;
+  padding-left: 3px;
+}
+
+.Button {
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #1c55ff;
+  transition: 0.4s;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: white;
+  margin-top: 10px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+.Button:hover,
+#submit:hover {
+  background-color: rgb(126, 167, 143);
+}

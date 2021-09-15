@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specific Table</title>
+    <link rel="stylesheet" href="../static/common.css">
+</head>
+
+<body>
+    <div class="flex-header">
+        <div class="flex-item-logo">
+            <a href="./mainpage"><img src="../static/logo.png" width="175px" height="90px"></a>
+        </div>
+        <div class="flex-logincontent">
+            <button class="Button" onclick="location.href='./';">Logout</button>
+        </div>
+    </div>
+    <div class="canvas">
+        <h3 class="tableTitle">Cleaning Products</h3>
+        <div class="form">
+            <table>
+                <tr>
+                    <th>ID Number</th>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                </tr>
+                {% for ID, name, quan in all_rows %}
+                    <tr>
+                        <td>{{ ID }}</td>
+                        <td>{{ name }}</td>
+                        <td>{{ quan }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+    <div class="backButtonDiv">
+        <button class="Button" onclick="location.href='./mainpage';">Go Back</button>
+    </div>
+
+</body>
+
+</html>

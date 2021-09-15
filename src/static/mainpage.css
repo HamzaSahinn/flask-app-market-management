@@ -1,0 +1,50 @@
+input:hover {
+  background-color: #03b5aa;
+}
+
+.inp {
+  width: 150px;
+  height: 25px;
+  background-color: #1c55ff;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  transition-duration: 0.4s;
+}
+
+.buttonCanvas {
+  max-width: 1100px;
+  margin: auto;
+  margin-bottom: 30px;
+  background-color: rgb(231, 227, 227);
+  padding: 30px;
+  border-radius: 20px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.formCanvas {
+  max-width: 900px;
+  margin: auto;
+  margin-bottom: 30px;
+  background-color: rgb(231, 227, 227);
+  padding: 30px;
+  border-radius: 20px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.formLabel {
+  font-size: medium;
+  margin-top: 5px;
+  margin-bottom: 2px;
+}
+.form-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
